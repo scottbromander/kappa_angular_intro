@@ -1,0 +1,14 @@
+{
+  "chocolate_chip" : {
+      "taste" : "awesome",
+      "texture" : "chewy",
+      "size" : "medium",
+      "cost" : 5
+  },
+  "snicker_doodle" : {
+      "taste" : "bland",
+      "texture" : "smooth",
+      "size" : "meh",
+      "cost" : 10
+  }
+}

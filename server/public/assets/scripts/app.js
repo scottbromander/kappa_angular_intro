@@ -1,9 +1,10 @@
 var myApp = angular.module("myApp", []);
 
-myApp.controller("IntroController", ["$scope", function($scope){
+myApp.controller("IntroController", ["$scope", "$http", function($scope, $http){
     // $scope.employee = {};
 
     $scope.employeeArray = [];
+
 
     $scope.meow = function(){
         console.log("Meow");
@@ -12,8 +13,21 @@ myApp.controller("IntroController", ["$scope", function($scope){
     $scope.saveEmployee = function(value){
         console.log(value);
         $scope.employeeArray.push(value);
+
+        $http.post("/employee", value).then(function(response){
+            console.log(response);
+        });
+
         $scope.employee = {};
-        console.log($scope.employeeArray);
     };
 
+    $scope.getData = function(){
+        $http.get("/cookies").then(function(response){
+          console.log(response.data);
+        });
+
+        console.log("Am I second? Or first?");
+    };
+
+    $scope.getData();
 }]);
